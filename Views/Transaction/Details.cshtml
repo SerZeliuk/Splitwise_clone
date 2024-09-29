@@ -1,0 +1,59 @@
+@model Splitwise_clone.Models.Transaction
+
+@{
+    ViewData["Title"] = "Transaction Details";
+}
+
+<h2>Transaction Details</h2>
+
+<div>
+    <h4>@Model.Description</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Amount
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Amount
+        </dd>
+        <dt class="col-sm-2">
+            Date
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Date
+        </dd>
+        <dt class="col-sm-2">
+            Created By
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Creator.UserName
+        </dd>
+    </dl>
+</div>
+
+<h4>Participants</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Paid Amount</th>
+            <th>Share Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participant in Model.Participants)
+        {
+            <tr>
+                <td>@participant.User.UserName</td>
+                <td>@participant.PaidAmount</td>
+                <td>@participant.ShareAmount</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="TransactionId" />
+    <button type="submit" class="btn btn-danger">Delete Transaction</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

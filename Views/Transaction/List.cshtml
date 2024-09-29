@@ -1,0 +1,32 @@
+@model IEnumerable<Splitwise_clone.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<h2>Transactions</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Created By</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.Amount</td>
+                <td>@transaction.Description</td>
+                <td>@transaction.Date</td>
+                <td>@transaction.Creator.UserName</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@transaction.TransactionId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

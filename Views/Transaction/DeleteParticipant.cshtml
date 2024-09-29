@@ -1,0 +1,20 @@
+@model Splitwise_clone.Models.Participant
+
+@{
+    ViewData["Title"] = "Delete Participant";
+}
+
+<h2>Delete Participant</h2>
+
+<h3>Are you sure you want to delete this participant?</h3>
+<div>
+    <h4>User: @Model.User.UserName</h4>
+    <h4>Transaction: @Model.Transaction.Description</h4>
+</div>
+
+<form asp-action="DeleteParticipant">
+    <input type="hidden" asp-for="TransactionId" />
+    <input type="hidden" asp-for="UserId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Participants" class="btn btn-secondary">Cancel</a>
+</form>

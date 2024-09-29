@@ -1,0 +1,33 @@
+@model IEnumerable<Splitwise_clone.Models.Participant>
+
+@{
+    ViewData["Title"] = "Participants";
+}
+
+<h2>Participants</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Transaction</th>
+            <th>Paid Amount</th>
+            <th>Share Amount</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participant in Model)
+        {
+            <tr>
+                <td>@participant.User.UserName</td>
+                <td>@participant.Transaction.Description</td>
+                <td>@participant.PaidAmount</td>
+                <td>@participant.ShareAmount</td>
+                <td>
+                    <a asp-action="DeleteParticipant" asp-route-transactionId="@participant.TransactionId" asp-route-userId="@participant.UserId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

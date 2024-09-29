@@ -1,0 +1,85 @@
+@model Splitwise_clone.Models.TransactionViewModel
+
+@{
+    ViewData["Title"] = "Create Transaction";
+}
+
+<h2>Create Transaction</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreatedBy"></label>
+        <select asp-for="CreatedBy" class="form-control">
+            @foreach (var user in ViewBag.Users)
+            {
+                <option value="@user.UserId">@user.UserName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Participants</label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Paid Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.Participants.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <select asp-for="Participants[i].UserId" class="form-control">
+                                @foreach (var user in ViewBag.Users)
+                                {
+                                    <option value="@user.UserId">@user.UserName</option>
+                                }
+                            </select>
+                        </td>
+                        <td>
+                            <input asp-for="Participants[i].PaidAmount" class="form-control" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" id="addParticipant">Add Participant</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('addParticipant').addEventListener('click', function () {
+            var table = document.querySelector('table tbody');
+            var row = document.createElement('tr');
+            row.innerHTML = `
+                <td>
+                    <select name="Participants[${table.rows.length}].UserId" class="form-control">
+                        @foreach (var user in ViewBag.Users)
+                        {
+                            <option value="@user.UserId">@user.UserName</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <input name="Participants[${table.rows.length}].PaidAmount" class="form-control" />
+                </td>
+            `;
+            table.appendChild(row);
+        });
+    </script>
+}

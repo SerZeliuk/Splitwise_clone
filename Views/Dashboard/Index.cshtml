@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-content">
+    <h2>Dashboard</h2>
+    <p>Welcome to your dashboard! This page is only accessible to logged-in users.</p>
+
+    <div class="button-group">
+        <p><a href="@Url.Action("Create", "Transaction")" class="btn">Create Transaction</a></p>
+        <p><a href="@Url.Action("List", "Transaction")" class="btn">View Transactions</a></p>
+        <p><a href="@Url.Action("Participants", "Transaction")" class="btn">View Participants</a></p>
+        <p><a href="@Url.Action("Balance", "Transaction")" class="btn">View Balance</a></p>
+        <p><a href="@Url.Action("UserList", "Account")" class="btn">View Users</a></p>
+    </div>
+</div>
+
+<style>
+    body {
+        background-image: url('/image.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .dashboard-content {
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 900px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    .button-group p {
+        margin: 15px 0; 
+
+    .btn {
+        display: inline-block;
+        font-size: 18px;
+        padding: 12px 25px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: #0062ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+</style>

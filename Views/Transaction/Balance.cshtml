@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Balance";
+}
+
+<h2>Balance</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var balance in (Dictionary<string, double>)ViewBag.Balance)
+        {
+            <tr>
+                <td>@balance.Key</td>
+                <td>@balance.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
