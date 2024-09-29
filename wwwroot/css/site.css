@@ -32,7 +32,7 @@ body {
 }
 
 .modern-list li span {
-  color: #28a745; /* Green checkmark */
+  color: #28a745; 
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -41,7 +41,7 @@ body {
 }
 
 .intro-content {
-  background-color: rgba(255, 255, 255, 0.8); /* Adds a white background with transparency */
+  background-color: rgba(255, 255, 255, 0.8); 
   padding: 30px;
   border-radius: 10px;
   max-width: 800px;
@@ -54,7 +54,7 @@ body {
   margin: 10px 0;
   font-size: 16px;
   color: white;
-  background-color: #007bff; /* Bootstrap blue color */
+  background-color: #007bff; 
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -73,4 +73,44 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.dashboard-button {
+  display: inline-block;
+  width: 200px; 
+  height: 200px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  gap: 20px;
+  justify-items: center;
+  align-items: center; 
+  margin: 20px; 
+}
+
+.dashboard-button i {
+  font-size: 100px; 
+  margin-top: 35px;
+  color: #333;
+}
+
+.dashboard-button span {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.dashboard-button:hover {
+  background-color: #e0e0e0; 
 }

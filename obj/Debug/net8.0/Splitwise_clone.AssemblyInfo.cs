@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Splitwise_clone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ffee014209b5594044cb6e8ac30c3dce2f311c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Splitwise_clone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Splitwise_clone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

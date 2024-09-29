@@ -1,23 +1,47 @@
+
+
 @{
     ViewData["Title"] = "Dashboard";
 }
-
-<div class="dashboard-content">
-    <h2>Dashboard</h2>
-    <p>Welcome to your dashboard! This page is only accessible to logged-in users.</p>
-
-    <div class="button-group">
-        <p><a href="@Url.Action("Create", "Transaction")" class="btn">Create Transaction</a></p>
-        <p><a href="@Url.Action("List", "Transaction")" class="btn">View Transactions</a></p>
-        <p><a href="@Url.Action("Participants", "Transaction")" class="btn">View Participants</a></p>
-        <p><a href="@Url.Action("Balance", "Transaction")" class="btn">View Balance</a></p>
-        <p><a href="@Url.Action("UserList", "Account")" class="btn">View Users</a></p>
-    </div>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<div>
+<p>
+    <h1>Welcome, @ViewBag.Username!</h1>
+</p>
 </div>
+<div class="dashboard-grid ">
+    <a href="@Url.Action("Create", "Transaction")" class="dashboard-button">
+        <i class="fas fa-plus"></i>
+        <span>Create</span>
+    </a>
+
+    <a href="@Url.Action("List", "Transaction")" class="dashboard-button">
+        <i class="fas fa-list"></i>
+        <span>Transactions</span>
+    </a>
+
+    <a href="@Url.Action("Participants", "Transaction")" class="dashboard-button">
+        <i class="fas fa-users"></i>
+        <span>Participants</span>
+    </a>
+
+    <a href="@Url.Action("Balance", "Transaction")" class="dashboard-button">
+        <i class="fas fa-balance-scale"></i>
+        <span>Balance</span>
+    </a>
+
+    <a href="@Url.Action("UserList", "Account")" class="dashboard-button">
+        <i class="fas fa-user"></i>
+        <span>Users</span>
+    </a>
+</div>
+
 
 <style>
     body {
-        background-image: url('/image.png');
+        background-image: url('/image2.png');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

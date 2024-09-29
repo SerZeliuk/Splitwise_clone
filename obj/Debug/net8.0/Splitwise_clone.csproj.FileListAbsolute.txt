@@ -169,3 +169,4 @@ C:\Users\serhi\VscodeProjects\C_sharp_final\Splitwise_clone\bin\Debug\net8.0\run
 C:\Users\serhi\VscodeProjects\C_sharp_final\Splitwise_clone\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\serhi\VscodeProjects\C_sharp_final\Splitwise_clone\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\serhi\VscodeProjects\C_sharp_final\Splitwise_clone\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\serhi\VscodeProjects\C_sharp_final\Splitwise_clone\obj\Debug\net8.0\Splitwise_clone.sourcelink.json
