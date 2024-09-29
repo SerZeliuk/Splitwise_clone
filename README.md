@@ -1,6 +1,8 @@
 # Splitwise Clone
 
 Welcome to the **Splitwise Clone**! This app simplifies managing shared expenses, whether it's splitting rent with roommates, sharing dinner bills, or organizing group trips. Keep track of who owes what and settle up with friends easily.
+![image](https://github.com/user-attachments/assets/4a37fd51-f186-48c6-96a5-84740e928e23)
+
 
 ## Features
 
